@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <div class="header"></div>
+        <title>Personal Finance For Young Adults</title>
+        <link rel="stylesheet" type="text/css" href="program.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,100&display=swap"
+         rel="stylesheet">
+    </head>
+    <body>
+                <section class="header">
+                    <nav>
+                        <div class="navigation">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="header_txt">
+                        <h1>Personal Finance For Young Adults</h1>
+        
+                    </div>
+                <h1><b>Working</b></h1>
+                <p1>The red table indicates your percentage budget breadown.</p1>
+                <br>
+                <p1>The green table indicates your ideal percentage budget breakdown</p1>
+                <hr>
+                <br>
+                <p1>Please enter your monthly salary after taxes</p1>
+                <input id="raw_salary" placeholder="Amount in Rupees">
+                <button onclick=" breakdown()" id="button1">Current Breakdown</button>
+                <button onclick=" breakdown2()" id="button2">Ideal Breakdown</button>
+                <table class="stable">
+                    <caption><b><i>Current Personal Budget Breakdown & Analysis</i></b></caption>
+                    <link rel="stylesheet" type="text/css" href="program.css">
+                    <script>
+                        function breakdown() {
+                            let sa = parseInt(document.getElementById("savings").value);
+                            let sb = parseInt(document.getElementById("raw_salary").value);
+                            let ia = parseInt(document.getElementById("insurance").value);
+                            let fm = parseInt(document.getElementById("food").value);
+                            let t = parseInt(document.getElementById("Transportation").value);
+                            let ma = parseInt(document.getElementById("misc").value);
+                            let hm = parseInt(document.getElementById("house").value);
+                            let sc = (sa / sb) * 100;
+                            let ic = (ia / sb) * 100;
+                            let fc = (fm / sb) * 100;
+                            let tc = (t / sb) * 100;
+                            let mc = (ma / sb) * 100;
+                            let hc = (hm / sb) * 100;
+                            let id = ic.toFixed(3);
+                            let sd = sc.toFixed(3);
+                            let fs = fc.toFixed(3);
+                            let td = tc.toFixed(3);
+                            let md = mc.toFixed(3);
+                            let hs = hc.toFixed(3);
+                            document.getElementById("savings.per").value = sd;
+                            document.getElementById("insurance.per").value = id;
+                            document.getElementById("food.per").value = fs;
+                            document.getElementById("t.per").value = td;
+                            document.getElementById("misc.percentage").value = md;
+                            document.getElementById("housep").value = hs;
+                            let a = "YES"
+                            let b = "NO"
+                            let c = "NIL"
+
+                                if (id > 12) {
+                                    document.getElementById("insurance.over").value = a;
+                                    let iga = ((ia)-(sb * 0.12))
+                                    document.getElementById("insurance.aover").value = iga;
+                                }
+                                else {
+                                    document.getElementById("insurance.over").value = b;
+                                    document.getElementById("insurance.aover").value = c;
+                                }
+
+
+                                if (fs > 20) {
+                                    document.getElementById("food.over").value = a;
+                                    let fga = ((fm) - (sb * 0.08))
+                                    document.getElementById("food.aover").value = fga
+                                }
+ 
+                                else {
+                                    document.getElementById("food.over").value = b;
+                                    document.getElementById("food.aover").value = c;
+                                }
+
+ 
+                                if (md > 20) {
+                                    document.getElementById("misc.over").value = a;
+                                    let mga = ((ma) - (sb * 0.10))
+                                    document.getElementById("misc.aover").value = mga
+                                }
+                                else {
+                                    document.getElementById("misc.over").value = b;
+                                    document.getElementById("misc.aover").value = c;
+                                }
+ 
+                             
+                                if (hs > 20) {
+                                    document.getElementById("house.over").value = a;
+                                    let hga = ((hm) - (sb * 0.28))
+                                    document.getElementById("house.aover").value = hga
+  
+                                }
+                                else {
+                                    document.getElementById("house.over").value = b;
+                                    document.getElementById("house.aover").value = c;
+                                }
+                            
+                            
+                                if (td > 20) {
+                                    document.getElementById("t.over").value = a;
+                                    let tsa = ((t) - (sb * 0.10))
+                                    document.getElementById("t.aover").value = tsa
+                                }
+                                else {
+                                    document.getElementById("t.over").value = b;
+                                    document.getElementById("t.aover").value = c;
+                                }
+                            
+                        }
+
+                    </script>
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Expense</th>
+                            <th>Amount</th>
+                            <th>Percentage</th>
+                            <th>Overspending</th>
+                            <th>Excess Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Savings</td>
+                            <td><input id="savings" placeholder="Enter Amount in Rupees"></td>
+                            <td><input id="savings.per"></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Housing</td>
+                            <td><input id="house" placeholder="Enter Amount in Rupees"></td>
+                            <td><input id="housep"></td>
+                            <td><input id="house.over"></td>
+                            <td><input id="house.aover"></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Insurance</td>
+                            <td><input id="insurance" placeholder="Enter Amount in Rupees"></td>
+                            <td><input id="insurance.per"></td>
+                            <td><input id="insurance.over"></td>
+                            <td><input id="insurance.aover"></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Food</td>
+                            <td><input id="food" placeholder="Enter Amount in Rupees"></td>
+                            <td><input id="food.per"></td>
+                            <td><input id="food.over"></td>
+                            <td><input id="food.aover"></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Transportation</td>
+                            <td><input id="Transportation" placeholder="Enter Amount in Rupees"></td>
+                            <td><input id="t.per"></td>
+                            <td><input id="t.over"></td>
+                            <td><input id="t.aover"></td>
+             
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>MISC.</td>
+                            <td><input id="misc" placeholder="Enter Amount in Rupees"></td>
+                            <td><input id="misc.percentage"></td>
+                            <td><input id="misc.over"></td>
+                            <td><input id="misc.aover"></td>
+                        </tr>
+                    </tbody>
+                </table>
+    
+                <table class="stable2">
+                    <caption><i></i></caption>
+                    <script>
+                            function breakdown2() {
+                                let sb = parseInt(document.getElementById("raw_salary").value);
+                                let sg2 = sb * 0.30
+                                let ig2 = sb * 0.12
+                                let fg2 = sb * 0.08
+                                let tg2 = sb * 0.1
+                                let mg2 = sb * 0.10
+                                let hg2 = sb * 0.28
+                                let hg3 = hg2.toFixed(3);
+                                document.getElementById("savings2").value = sg2;
+                                document.getElementById("housing2").value = hg3;
+                                document.getElementById("insurance2").value = ig2;
+                                document.getElementById("food2").value = fg2;
+                                document.getElementById("transportation2").value = tg2;
+                                document.getElementById("misc2").value = mg2;
+                            }
+                    </script>
+                    <caption><b><i>Ideal Personal Budget Breakdown</i></i></b></caption>
+                    <thead>
+                        <tr>
+                            <th>S No.</th>
+                            <th>Expense</th>
+                            <th>Amount</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Savings</td>
+                            <td><input id="savings2"></td>
+                            <td>30%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Housing</td>
+                            <td><input id="housing2"></td>
+                            <td>28%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Insurance</td>
+                            <td><input id="insurance2"></td>
+                            <td>12%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Food</td>
+                            <td><input id="food2"></td>
+                            <td>8%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Transportation</td>
+                            <td><input id="transportation2"></td>
+                            <td>10%</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>MISC.</td>
+                            <td><input id="misc2"></td>
+                            <td>10%</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+    </body>
+</html>

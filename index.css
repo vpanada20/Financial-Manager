@@ -1,0 +1,123 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+.header{
+    min-height: 70vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/finance_header3.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+.navigation{
+    flex: 1;
+    text-align: right;
+
+}
+.navigation ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.navigation ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+.navigation ul li::after{
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition: 0.5;
+}
+.navigation ul li:hover::after{
+    width: 100%;
+}
+.header_txt{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.header_txt h1{
+    font-size: 55px;
+}
+.body1{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+}
+ h2{
+    font-size: 36px;
+    font-weight: 600;
+}
+p{
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+
+}
+.body2{
+         width: 80%;
+        margin: auto;
+        text-align: center;
+        padding-top: 60px;
+}
+
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p {
+    color: black;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+
+}
+.footer {
+    position: bottom;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:#65a765;
+    color: black;
+    text-align: right;
+    padding: 1px;
+
+}
+.body3 {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 130px;
+}
+.header_txt{
+    display: flex;
+    justify-content: space-between;
+    padding: 40p;
+    width: 60%;
+    margin:5rem auto 0 auto;
+}
